@@ -1,51 +1,14 @@
 import React, { useEffect, useState } from "react";
-import styled, { css } from "styled-components";
-import { Racer } from "../../App";
+import { UsersProps } from "../../types/Types";
 import {
-  Img,
-  PenaltyTime,
   Speed,
+  StyledCircle,
+  StyledPenaltyTime,
+  StyledUserNumber,
   TimeWrapper,
   UserName,
-  UserNumber,
   UserWrapper,
 } from "./style";
-
-interface UsersProps {
-  index: number;
-  selected: number;
-  setSelected: (selected: number) => void;
-  racer: Racer;
-}
-
-interface StyledUserNumberProps {
-  selected: boolean;
-}
-
-const StyledUserNumber = styled(UserNumber)<StyledUserNumberProps>`
-  ${(props) =>
-    props.selected &&
-    css`
-      color: #4c00ff;
-    `}
-`;
-
-const StyledPenaltyTime = styled(PenaltyTime)<StyledUserNumberProps>`
-  ${(props) =>
-    props.selected &&
-    css`
-      color: #e7e703;
-    `}
-`;
-const StyledCircle = styled(Img)<StyledUserNumberProps>`
-  ${(props) =>
-    props.selected &&
-    css`
-      width: 65px;
-      height: 65px;
-      border: 3px solid #4c00ff;
-    `}
-`;
 
 function generateRandomTime() {
   const hours = Math.floor(Math.random() * 24);

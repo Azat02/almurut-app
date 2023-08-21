@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { StyledUserNumberProps } from "../../types/Types";
 
 export const UserWrapper = styled.div`
   width: 100%;
@@ -6,6 +7,7 @@ export const UserWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 auto;
 `;
 
 export const Img = styled.img`
@@ -51,4 +53,34 @@ export const Circle = styled.div`
   width: 63px;
   height: 63px;
   border-radius: 50%;
+`;
+
+export const MainWrapper = styled.div`
+  margin: 0 auto;
+  width: 300px;
+`;
+
+export const StyledUserNumber = styled(UserNumber)<StyledUserNumberProps>`
+  ${(props) =>
+    props.selected &&
+    css`
+      color: #4c00ff;
+    `}
+`;
+
+export const StyledPenaltyTime = styled(PenaltyTime)<StyledUserNumberProps>`
+  ${(props) =>
+    props.selected &&
+    css`
+      color: #e7e703;
+    `}
+`;
+export const StyledCircle = styled(Img)<StyledUserNumberProps>`
+  ${(props) =>
+    props.selected &&
+    css`
+      width: 65px;
+      height: 65px;
+      border: 3px solid #4c00ff;
+    `}
 `;
